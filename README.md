@@ -1,12 +1,14 @@
 # ComfyUI Local Dockerize
-Bring your AI Image Generation into local with docker
+Bring your AI Image Generation into local with docker.
+https://www.comfy.org/
 
+---
 ### **Hardware Requirment**
 CPU minimum 8 threads
 Memory minimum 16Gb
 For my local environment GPU using NVIDIA RTX 3050
 
-Note:
+### **NOTE**
 The average models size is very large, so prepare a disk size of at least 128GB for storing the models.
 
 ---
