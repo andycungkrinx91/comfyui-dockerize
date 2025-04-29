@@ -6,8 +6,7 @@ services:
   # ComfyUI AI Image Generator
   comfyui:
     build:
-      context: ./docker/comfyui
-      dockerfile: Dockerfile
+      dockerfile: ./docker/Dockerfile
     container_name: comfyui
     restart: unless-stopped
     network_mode: "service:network-service"

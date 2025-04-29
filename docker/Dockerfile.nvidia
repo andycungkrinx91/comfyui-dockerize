@@ -5,8 +5,8 @@ RUN useradd -ms /bin/bash app && \
     usermod -u 1000 app && \ 
     groupmod -g 1000 app
 
-COPY --chown=app:app comfyui /home/app/comfyui
-COPY --chown=app:app requirements-nvidia.txt /home/app/comfyui/requirements-nvidia.txt
+COPY --chown=app:app docker/comfyui /home/app/comfyui
+COPY --chown=app:app docker/requirements-nvidia.txt /home/app/comfyui/requirements-nvidia.txt
 WORKDIR /home/app/comfyui
 
 USER app

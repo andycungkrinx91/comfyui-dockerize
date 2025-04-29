@@ -5,8 +5,8 @@ RUN useradd -ms /bin/bash app && \
     usermod -u 1000 app && \ 
     groupmod -g 1000 app
 
-COPY --chown=app:app comfyui /home/app/comfyui
-COPY --chown=app:app requirements.txt /home/app/comfyui/requirements.txt
+COPY --chown=app:app docker/comfyui /home/app/comfyui
+COPY --chown=app:app docker/requirements.txt /home/app/comfyui/requirements.txt
 WORKDIR /home/app/comfyui
 
 USER app
