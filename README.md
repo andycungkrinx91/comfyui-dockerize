@@ -41,7 +41,6 @@ move v1-5-pruned-emaonly.safetensors to folder data/models/checkpoints/v1-5-prun
 
 ### **How To Get Latest Comfyui Version**
 ```
-./update.sh
-./run.sh or ./run-nvdia.sh
+git pull --recurse-submodules
 ```
 

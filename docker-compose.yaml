@@ -3,10 +3,10 @@ networks:
     external: true
     name: local-ai-network
 services:
-  # Comfyui AI Image Generator
+  # ComfyUI AI Image Generator
   comfyui:
     build:
-      context: ./docker/ComfyUI
+      context: ./docker/comfyui
       dockerfile: Dockerfile
     container_name: comfyui
     restart: unless-stopped
