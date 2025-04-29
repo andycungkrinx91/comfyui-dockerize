@@ -1,0 +1,54 @@
+networks:
+  local-ai-network:
+    external: true
+    name: local-ai-network
+services:
+  # Comfyui AI Image Generator
+  comfyui:
+    build:
+      context: ./docker/ComfyUI
+      dockerfile: Dockerfile
+    container_name: comfyui
+    restart: unless-stopped
+    network_mode: "service:network-service"
+    stdin_open: true
+    tty: true
+    privileged: true
+    user: "1000:1000"
+    volumes:
+      - ./data/models:/home/app/comfyui/models
+      - ./data/output:/home/app/comfyui/output
+      - ./data/custom_nodes:/home/app/comfyui/custom_nodes
+    environment:
+      - "NVIDIA_VISIBLE_DEVICES=all"
+    deploy:
+      resources:
+        limits:
+          cpus: ${comfyui_cpus_limits}
+          memory: ${comfyui_memory_limits}
+        reservations:
+          cpus: ${comfyui_cpus_request}
+          memory: ${comfyui_memory_request}
+
+  # Network Service
+  network-service:
+    image: alpine
+    container_name: local-ai-network
+    restart: unless-stopped
+    ports:
+      - 8188:8188 # comfyui port
+    command: tail -f /dev/null
+    networks:
+      - local-ai-network
+    deploy:
+      resources:
+        limits:
+          cpus: ${networkservice_cpus_limits}
+          memory: ${networkservice_memory_limits}
+        reservations:
+          cpus: ${networkservice_cpus_request}
+          memory: ${networkservice_memory_request}
+
+volumes:
+  comfyui: {}
+
