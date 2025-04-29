@@ -21,3 +21,9 @@ open your browser with url http://localhost:8081
 for stop service just run ./stop.sh
 ```
 
+### **How To Get Latest Comfyui Version**
+```
+./update.sh
+./run.sh or ./run-nvdia.sh
+```
+
