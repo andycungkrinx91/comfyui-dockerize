@@ -6,7 +6,7 @@ RUN useradd -ms /bin/bash app && \
     groupmod -g 1000 app
 
 COPY --chown=app:app comfyui /home/app/comfyui
-COPY --chown=app:app requirements.txt /home/app/comfyui/requirements.txt
+COPY --chown=app:app requirements-nvidia.txt /home/app/comfyui/requirements-nvidia.txt
 WORKDIR /home/app/comfyui
 
 USER app
