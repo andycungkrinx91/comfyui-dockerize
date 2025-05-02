@@ -4,8 +4,8 @@ https://www.comfy.org/<br>
 
 ---
 ### **Hardware Requirment**
-CPU minimum 8 threads<br>
-Memory minimum 16Gb<br>
+CPU minimum 4 threads<br>
+Memory minimum 8Gb<br>
 For my local environment GPU using NVIDIA RTX 3050
 
 ### **NOTE**
@@ -44,3 +44,20 @@ move v1-5-pruned-emaonly.safetensors to folder data/models/checkpoints/v1-5-prun
 git pull --recurse-submodules
 ```
 
+### **How To Add Modules**
+```
+You can go to menu Workflow >> Browse Template >> Chose template. (if models not exist in your machine then will appear popup to download them)
+After all needed have successfully to download then move file to folder models/checkpoint or what path the workflow needed for load the safetensors
+Refresh models list from browser and run your workflow
+
+Or you can use this
+Goto https://huggingface.co/
+Search what your modules needed and download file with preffix `.safetensors`
+move file to folder models/checkpoint or what path the workflow needed for load the safetensors
+```
+
+### **How To Add Workflow**
+```
+You can go to https://comfyworkflows.com/workflows/ for download workflow template
+Import in menu Workflow => Open => Choice your workflow. (extension json)
+```

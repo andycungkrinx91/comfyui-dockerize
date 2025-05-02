@@ -32,10 +32,10 @@ services:
   # Network Service
   network-service:
     image: alpine
-    container_name: local-ai-network
+    container_name: network-service
     restart: unless-stopped
     ports:
-      - 8188:8188 # comfyui port
+      - 80:8188 # comfyui port
     command: tail -f /dev/null
     networks:
       - local-ai-network

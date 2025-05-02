@@ -11,6 +11,7 @@ WORKDIR /home/app/comfyui
 
 USER app
 RUN pip install --default-timeout=1200 -r requirements.txt
+RUN pip install --default-timeout=1200 GitPython aiohttp_retry
 
 EXPOSE 8188
-CMD ["python", "main.py", "--cpu", "--enable-cors-header '*'", "--listen", "0.0.0.0", "--port", "8188" ]
+CMD ["python", "main.py", "--enable-cors-header", "--cpu", "--listen", "--port", "8188" ]
